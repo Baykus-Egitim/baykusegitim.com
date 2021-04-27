@@ -1,6 +1,7 @@
   
 server {
-    root /root/sites/baykusegitim.com;
+    root /root/sites/baykushizliokuma.com;
+
     index index.html;
     server_name baykusegitim.com www.baykusegitim.com;
     location / {
@@ -20,6 +21,9 @@ server {
 }
   
 server {
+    server_name baykusegitim.com www.baykusegitim.com;
+    listen 80;
+
     if ($host = www.baykusegitim.com) {
         return 301 https://$host$request_uri;
     } # managed by Certbot
@@ -30,8 +34,6 @@ server {
     } # managed by Certbot
 
 
-    server_name baykusegitim.com www.baykusegitim.com;
-    listen 80;
     return 404; # managed by Certbot
 
 
